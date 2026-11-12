@@ -1,1 +1,4 @@
 studio/
+.claude-paint/
+render/
+portrait_render*.png

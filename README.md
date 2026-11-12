@@ -44,14 +44,16 @@ green), smalt and Naples yellow.
    velvet band with gold knotwork, a double strand of jet beads. A stone parapet.
 7. **Finishing.** The engine's varnish (and, for the aged version, its craquelure).
 
-## Replaying
-
-Build claude-paint (`cargo build --release -p easel`), then:
+## Rendering it yourself
 
 ```sh
-EASEL_BIN=/path/to/claude-paint/target/release/easel tools/e run painting_log.lua --out portrait.png
+./render.sh            # clones and builds claude-paint, replays painting_log.lua, writes the PNGs
 ```
 
-`tools/e` sets the box to `friedrich` (the period palette); `tools/preview.sh` and
+It needs git, Rust (rustup) and a C compiler (Xcode command-line tools on a Mac), and about
+8 GB of RAM at peak. The log names its own tube box and engine version, so the replay paints
+the same canvas, then `easel finish` makes the varnished and aged versions.
+
+`tools/e` is the wrapper used for live painting (`friedrich` box); `tools/preview.sh` and
 `tools/dump2png.py` render the 3-D head model's light as an image, which is how the head was
 sculpted before any paint went on.
