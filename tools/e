@@ -1,0 +1,4 @@
+#!/bin/bash
+export EASEL_ROOT="${EASEL_ROOT:-$(pwd)/studio}"
+export EASEL_BOX=friedrich
+exec "${EASEL_BIN:-easel}" "$@"
